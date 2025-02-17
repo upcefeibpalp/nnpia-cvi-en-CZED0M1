@@ -1,0 +1,20 @@
+Do projektu přidejte závislost Spring Boot DevTools.
+gradle
+K čemu slouží závislost Spring Boot DevTools?
+Jaká je její největší výhoda?
+Přidání dvou nových endpointů do UserController AI
+Upravte endpoint /user aby přijal ID uživatele jako Query parameter (/user?id=1) a vrátí odpovídající instanci třídy User.
+Otestujte endpoint pomocí Postmanu.
+Upravte endpoint /user aby přijal ID uživatele jako Path parameter (/user/{id}) a vrátí odpovídající instanci třídy User.
+Otestujte endpoint pomocí Postmanu.
+Po ověřené funkčnosti přepište adresu endpointu /users vracející všechny uživatele na /user.
+Otestujte endpoint pomocí Postmanu.
+a jen toto:
+Upravte endpoint /user aby přijal ID uživatele jako Query parameter (/user?id=1) a vrátí odpovídající instanci třídy User.
+Otestujte endpoint pomocí Postmanu.
+toto dej pryč: @RequestMapping("/user")
+a jak upravit metodu getuserbyid
+myslím ve třídě userService
+
+
+
