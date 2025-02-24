@@ -4,9 +4,11 @@ import cz.upce.fei.nnpiacv.domain.User;
 import cz.upce.fei.nnpiacv.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.Collections;
 
 @RestController
 public class UserController {
@@ -21,16 +23,16 @@ public class UserController {
         return userService.findUser(id);
     }
 
-/*
-    @GetMapping("/user")
-    public User findUser(@RequestParam Long id) {
-        return userService.findUser(id);
-    }
-    */
 
     @GetMapping("/user")
-    public Collection<User> findUsers() {
-
-        return userService.findUsers();
+    public Collection<User> findUser(@RequestParam(required=false) String email) {
+        if(email==null) {
+            return userService.findUsers();
+        }else {
+            return Collections.singletonList(userService.findByEmail(email));
+        }
     }
+
+
+
 }
