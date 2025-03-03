@@ -1,5 +1,6 @@
 package cz.upce.fei.nnpiacv.domain;
 
+import cz.upce.fei.nnpiacv.dto.UserResponseDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,13 +10,17 @@ import java.util.List;
 @Entity
 @Table(name = "app_user")
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(unique = true)
-    private String email;
-    private String password;
 
+    @Column(unique = true)
+    @NonNull
+    private String email;
+    @NonNull
+    private String password;
 
     @ManyToMany
     @JoinTable(
@@ -23,10 +28,4 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id")
     )
     private List<Role> roles;
-
-    public User(long id, String email, String password) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-    }
 }

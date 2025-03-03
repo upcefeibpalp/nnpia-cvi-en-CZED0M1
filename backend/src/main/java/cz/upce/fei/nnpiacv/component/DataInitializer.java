@@ -9,7 +9,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
-import java.util.List;
 
 @Component
 @Slf4j
@@ -25,11 +24,13 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args){
-        userRepository.removeUserById(0L);
-        User user = new User(0L,"admin@upce.cz","admin");
+        User user = new User();
+        user.setEmail("admin@upce.cz");
+        user.setPassword("admin");
 
         Role role = new Role(0L, "ADMIN");
         roleRepository.save(role);
+
         user.setRoles(Collections.singletonList(role));
 
         if (!userRepository.existsById(user.getId())){
