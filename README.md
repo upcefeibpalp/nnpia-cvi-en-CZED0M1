@@ -6,7 +6,7 @@ Repozitář pro průběžné sledování **12 cvičení** v rámci kurzu NNPIA. 
 ## Pravidla verzování
 
 1. **Každý commit musí být opatřen prefixem cvičení ve formátu `CV-N`**, kde `N` odpovídá číslu cvičení, ke kterému commit patří.
-    - Příklad správného commitu: `CV-03: User authentication using JWT tokens`
+    - Příklad správného commitu: `CV-03: UserTable authentication using JWT tokens`
 2. **Všechny změny musí být pushnuty do repozitáře z GitHub Classroom**.
 3. **Studenti mohou vytvářet samostatné větve**. Veškeré změny ale musí být mergnuty zpět do `master` nebo `main` před koncem semestru.
 
